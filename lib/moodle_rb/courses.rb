@@ -80,7 +80,7 @@ module MoodleRb
           :query => query_hash('core_course_get_courses', token),
           :body => {
             :options => {
-              id: ids
+              ids: ids
             }
           }
         }.merge(query_options)
