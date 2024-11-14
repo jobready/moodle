@@ -1,0 +1,38 @@
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8888/moodle28/webservice/rest/server.php?moodlewsrestformat=json&wsfunction=core_course_get_courses&wstoken=60fc9c9415259404795094957e4ab32f
+    body:
+      string: options[ids][0]=1&options[ids][1]=2
+    headers: {}
+
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Powered-By:
+      - PHP/5.6.2
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Server:
+      - Apache/2.2.29 (Unix) mod_fastcgi/2.4.6 mod_wsgi/3.4 Python/2.7.8 PHP/5.6.2 mod_ssl/2.2.29 OpenSSL/0.9.8zd DAV/2 mod_perl/2.0.8 Perl/v5.20.0
+      Pragma:
+      - no-cache
+      Accept-Ranges:
+      - none
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 12 Apr 2015 00:51:46 GMT
+      Content-Length:
+      - "707"
+      Cache-Control:
+      - private, must-revalidate, pre-check=0, post-check=0, max-age=0
+    body:
+      string: "[{\"id\":1,\"shortname\":\"Moodle 2.8\",\"categoryid\":0,\"categorysortorder\":1,\"fullname\":\"Moodle 2.8\",\"idnumber\":\"\",\"summary\":\"<h2 style=\\\"font-size: large;\\\">Moodle<span style=\\\"font-size: 1.8em; color: red;\\\">4<\\/span>Mac<\\/h2>\\r\\n<p>This package for OS&nbsp;X comes with Moodle&nbsp;2.8.5+ and MAMP 3.0.7.3.&nbsp;We hope you will like it!<\\/p>\",\"summaryformat\":1,\"format\":\"site\",\"showgrades\":1,\"newsitems\":3,\"startdate\":0,\"numsections\":1,\"maxbytes\":0,\"showreports\":0,\"visible\":1,\"groupmode\":0,\"groupmodeforce\":0,\"defaultgroupingid\":0,\"timecreated\":1405375287,\"timemodified\":1426316351,\"enablecompletion\":0,\"completionnotify\":0,\"lang\":\"\",\"forcetheme\":\"\",\"courseformatoptions\":[{\"name\":\"numsections\",\"value\":1}]}, {\"id\":2,\"shortname\":\"Moodle 2.8\",\"categoryid\":0,\"categorysortorder\":1,\"fullname\":\"Moodle 2.8\",\"idnumber\":\"\",\"summary\":\"<h2 style=\\\"font-size: large;\\\">Moodle<span style=\\\"font-size: 1.8em; color: red;\\\">4<\\/span>Mac<\\/h2>\\r\\n<p>This package for OS&nbsp;X comes with Moodle&nbsp;2.8.5+ and MAMP 3.0.7.3.&nbsp;We hope you will like it!<\\/p>\",\"summaryformat\":1,\"format\":\"site\",\"showgrades\":1,\"newsitems\":3,\"startdate\":0,\"numsections\":1,\"maxbytes\":0,\"showreports\":0,\"visible\":1,\"groupmode\":0,\"groupmodeforce\":0,\"defaultgroupingid\":0,\"timecreated\":1405375287,\"timemodified\":1426316351,\"enablecompletion\":0,\"completionnotify\":0,\"lang\":\"\",\"forcetheme\":\"\",\"courseformatoptions\":[{\"name\":\"numsections\",\"value\":1}]}]"
+    http_version:
+  recorded_at: Sun, 12 Apr 2015 00:51:46 GMT
+recorded_with: VCR 2.9.3

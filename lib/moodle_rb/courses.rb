@@ -70,20 +70,29 @@ module MoodleRb
     end
 
     def show(id)
+      if id.is_a?(Array)
+        ids = id.each_with_object({}) do |item, hash|
+          hash[id.index(item).to_s] = item
+        end
+      else
+        ids = { '0' => id }
+      end
+
       response = self.class.post(
         '/webservice/rest/server.php',
         {
           :query => query_hash('core_course_get_courses', token),
           :body => {
             :options => {
-              :ids => {
-                '0' => id
-              }
+              :ids => ids
             }
           }
         }.merge(query_options)
       )
       check_for_errors(response)
+
+      return response.parsed_response if response.parsed_response.count > 1
+
       response.parsed_response.first
     end
 
