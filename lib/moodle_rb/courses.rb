@@ -70,10 +70,9 @@ module MoodleRb
     end
 
     def show(*id)
-      ids = id.each_with_index
-              .to_h
-              .invert
-              .transform_keys(&:to_s)
+      ids = id.map.with_index do |item, idx|
+        [idx.to_s, item]
+      end.to_h
 
       response = self.class.post(
         '/webservice/rest/server.php',
