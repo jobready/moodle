@@ -86,10 +86,7 @@ module MoodleRb
         }.merge(query_options)
       )
       check_for_errors(response)
-
-      return response.parsed_response if id.count > 1
-
-      response.parsed_response.first
+      id.count > 1 ? response.parsed_response : response.parsed_response.first
     end
 
     def destroy(id)
