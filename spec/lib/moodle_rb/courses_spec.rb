@@ -97,8 +97,7 @@ describe MoodleRb::Courses do
     end
 
     context 'when passing array of ids' do
-      let(:ids) { [1, 2] }
-      let(:result) { course_moodle_rb.show(ids) }
+      let(:result) { course_moodle_rb.show(1, 2) }
 
       specify do
         expect(result).to be_a Array
