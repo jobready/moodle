@@ -50,7 +50,7 @@ moodle.courses.show(course_id)
 ```
 
 ```
-moodle.courses.show(course_ids) #Example: moodle.courses.show([1030, 679....])
+moodle.courses.show(course_ids) # Example: moodle.courses.show(1234, 234, ...)
 ```
 
 Delete a course

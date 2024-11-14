@@ -1,6 +1,13 @@
-FROM ruby:2.3-slim
+FROM ruby:2.7.8-slim
 
-RUN apt-get update -y && apt-get install -y git
+
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends \
+      build-essential \
+      git \
+      libffi-dev \
+      gcc \
+      make
 
 WORKDIR /app
 ADD . .
