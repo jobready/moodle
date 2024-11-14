@@ -87,7 +87,7 @@ module MoodleRb
       )
       check_for_errors(response)
 
-      return response.parsed_response if response.parsed_response.count > 1
+      return response.parsed_response if id.count > 1
 
       response.parsed_response.first
     end
