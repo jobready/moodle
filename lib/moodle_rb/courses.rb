@@ -69,14 +69,11 @@ module MoodleRb
       response.parsed_response.first
     end
 
-    def show(id)
-      if id.is_a?(Array)
-        ids = id.each_with_object({}) do |item, hash|
-          hash[id.index(item).to_s] = item
-        end
-      else
-        ids = { '0' => id }
-      end
+    def show(*id)
+      ids = id.each_with_index
+              .to_h
+              .invert
+              .transform_keys(&:to_s)
 
       response = self.class.post(
         '/webservice/rest/server.php',
@@ -84,7 +81,7 @@ module MoodleRb
           :query => query_hash('core_course_get_courses', token),
           :body => {
             :options => {
-              :ids => ids
+              id: ids
             }
           }
         }.merge(query_options)
