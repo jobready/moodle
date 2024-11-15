@@ -69,22 +69,24 @@ module MoodleRb
       response.parsed_response.first
     end
 
-    def show(id)
+    def show(*id)
+      ids = id.map.with_index do |item, idx|
+        [idx.to_s, item]
+      end.to_h
+
       response = self.class.post(
         '/webservice/rest/server.php',
         {
           :query => query_hash('core_course_get_courses', token),
           :body => {
             :options => {
-              :ids => {
-                '0' => id
-              }
+              ids: ids
             }
           }
         }.merge(query_options)
       )
       check_for_errors(response)
-      response.parsed_response.first
+      id.count > 1 ? response.parsed_response : response.parsed_response.first
     end
 
     def destroy(id)

@@ -86,11 +86,24 @@ describe MoodleRb::Courses do
     :match_requests_on => [:path], :record => :once
   } do
     let(:id) { 1 }
-    let(:result) { course_moodle_rb.show(id) }
 
-    specify do
-      expect(result).to be_a Hash
-      expect(result['id']).to eq 1
+    context 'when passing single id' do
+      let(:result) { course_moodle_rb.show(id) }
+
+      specify do
+        expect(result).to be_a Hash
+        expect(result['id']).to eq 1
+      end
+    end
+
+    context 'when passing array of ids' do
+      let(:result) { course_moodle_rb.show(1, 2) }
+
+      specify do
+        expect(result).to be_a Array
+        expect(result[0]['id']).to eq 1
+        expect(result[1]['id']).to eq 2
+      end
     end
 
     context 'when using invalid token' do

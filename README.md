@@ -1,6 +1,6 @@
 # MoodleRb
 
-[![Build](https://github.com/jobready/moodle-rb/actions/workflows/build.yml/badge.svg)](https://github.com/jobready/moodle-rb/actions/workflows/build.yml) 
+[![Build](https://github.com/jobready/moodle-rb/actions/workflows/build.yml/badge.svg)](https://github.com/jobready/moodle-rb/actions/workflows/build.yml)
 
 [![Gem Version](https://badge.fury.io/rb/moodle_rb.svg)](https://badge.fury.io/rb/moodle_rb)
 
@@ -47,6 +47,10 @@ moodle.courses.search('My course')
 Show a course
 ```
 moodle.courses.show(course_id)
+```
+
+```
+moodle.courses.show(course_ids) # Example: moodle.courses.show(1234, 234, ...)
 ```
 
 Delete a course
