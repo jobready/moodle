@@ -29,7 +29,7 @@ module MoodleRb
 
     def check_for_errors(response)
       return unless error_response?(response)
-      raise MoodleError.new(response.parsed_response)
+      raise MoodleError.new(response.parsed_response.presence || response.response.inspect)
     end
 
     private
